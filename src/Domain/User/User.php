@@ -4,14 +4,15 @@
   use App\Domain\Phone\Phone;
   use App\Domain\Club\Club;
   use App\Domain\Quote\Quote;
+  use App\Domain\BirthDate\BirthDate;
   
   class User
   {
       private $mail;
       private $phone; /* Tiene que ser una clase */
       private $club;  /* Tiene que ser una clase (tendrá un identificador)*/
-      private $sex;
       private $quote; /* Tiene que ser una clase */
+      private $birthDate; /*Tiene que ser una clase */
 
 
       public function setMail(Mail $mail)
@@ -47,18 +48,6 @@
           return $this->club;
       }
 
-      public function setSex(string $sex)
-      {
-          $this -> sex = $sex;
-          return "OK";
-
-      }
-
-      public function getSex()
-      {
-          return $this -> sex;
-
-      }
 
       public function setQuote(Quote $quote)
       {
@@ -69,6 +58,16 @@
       public function getQuote()
       {
           return $this->quote;
+      }
+
+      public function setBirthDate(BirhDate $birthDate)
+      {
+          $this -> birthDate = $birthDate;
+      }
+
+      public function getBirthDate()
+      {
+          return $this -> birthDate;
       }
 
 
