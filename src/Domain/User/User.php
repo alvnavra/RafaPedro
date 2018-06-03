@@ -13,7 +13,11 @@
       private $club;  /* Tiene que ser una clase (tendrá un identificador)*/
       private $quote; /* Tiene que ser una clase */
       private $birthDate; /*Tiene que ser una clase */
-
+      private $name;
+      private $firstSurname;
+      private $secondSurname;
+      private $language;
+  
 
       public function setMail(Mail $mail)
       {
@@ -70,6 +74,45 @@
           return $this -> birthDate;
       }
 
+      public function setLanguage(string $language)
+      {
+          $this -> language = $language;
+      }
+
+      public function getLanguage()
+      {
+          return $this -> $language;
+      }
+      
+      public function setName(string $name)
+      {
+          $this -> name = $name;
+      }
+
+      public function getName()
+      {
+          return $this -> name;
+      }
+
+      public function setFirstSurname($firstSurname)
+      {
+          $this -> firstSurname = $firstSurname;
+      }
+
+      public function getFirstSurname()
+      {
+          return $this -> firstSurname;
+      }
+
+      public function setSecondSurname($secondSurname)
+      {
+          $this -> secondSurname = $secondSurname;
+      }
+
+      public function getSecondSurname()
+      {
+          return $this -> secondSurname;
+      }
 
   }
 

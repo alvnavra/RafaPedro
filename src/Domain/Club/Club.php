@@ -1,13 +1,37 @@
 <?php
     namespace App\Domain\Club;
+    use Doctrine\ORM\Mapping as ORM;
+    use App\Domain\TPV\TPV;
+
+    
+	/**
+	 *  @ORM\Table(name="Club")
+	 */	
     class Club
     {
         /* Debe tener: id, nombre, una dirección, número de comercio */
-        private $id;
-        private $name;
-        private $address;
-        private $businnessNumber;
 
+        /**
+         * @ORM\Id
+         * @ORM\GeneratedValue
+         * @ORM\Column(type="integer")
+         */        
+        private $id;
+
+        /**
+         * @ORM\Column(type="string", length=50)
+         */
+        private $name;
+        /**
+         * @ORM\Column(type="string", length=200)
+         */
+        private $address;
+
+        /*
+         * @ORM\OneToMany(targetEntity="App\Domain\TPV", inversedBy="clubs")     
+         */
+        private $tpv;
+        
         public function setId($id)
         {
             if(!is_int($id))
@@ -48,17 +72,26 @@
         public function getAddress()
         {
             return $this->address;
-        }                
+        }                        
 
-        public function setBussinessNumber(string $businnessNumber)
+        /**
+         * Get the value of tpv
+         */ 
+        public function getTpv()
         {
-            $this->businnessNumber = $businnessNumber;
-            return "OK";
+                return $this->tpv;
         }
 
-        public function getBusinnessNumber()
+        /**
+         * Set the value of tpv
+         *
+         * @return  self
+         */ 
+        public function setTpv(TPV $tpv)
         {
-            return $this->businnessNumber;
-        }                        
+                $this->tpv = $tpv;
+
+                return $this;
+        }
     }
 

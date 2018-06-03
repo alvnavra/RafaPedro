@@ -10,9 +10,7 @@
       private $ancillary; /*Deberá ser una clase*/
       private $accessTime; /*Deberá ser una clase*/
       private $quotePrice;
-      private $joiningPrice;
       private $nextBillNotification;
-      private $joiningDate;
 
       public function setName(string $name)
       {
